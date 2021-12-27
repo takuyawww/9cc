@@ -3,9 +3,9 @@ assert() {
   expected="$1"
   input="$2"
 
-  ./9cc/9cc "$input" > ./9cc/tmp.s
-  cc -o ./9cc/tmp ./9cc/tmp.s
-  ./9cc/tmp
+  ./9cc "$input" > tmp.s
+  cc -o tmp tmp.s
+  ./tmp
   actual="$?"
 
   if [ "$actual" = "$expected" ]; then
